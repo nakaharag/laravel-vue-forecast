@@ -55,8 +55,8 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   server: {
-    host: '0.0.0.0', // Listen on all interfaces
-    port: 8080,      // Use port 8080
+    host: '0.0.0.0',
+    port: 8080,
     strictPort: true,
     hmr: {
       host: 'localhost',
@@ -89,6 +89,18 @@ If you encounter permission issues:
 ```
 sudo chown -R $(whoami):$(whoami) backend frontend
 sudo chmod -R 755 backend frontend
+```
+
+6. Create users
+Run User seeder to have two pre-defined users:
+
+`docker compose exec backend php artisan db:seed`
+
+You can now log in using either of:
+
+```
+gustavo@nakahara.pro : password
+lionel@example.com : password
 ```
 
 ## Accessing the Applications
